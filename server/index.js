@@ -18,11 +18,12 @@ connectDB();
 // Middleware
 app.use(
   cors({
-    origin: ["https://the-llm.vercel.app"],
+    origin: ["https://the-llm.vercel.app", process.env.AWS_URL],
     methods: ["GET", "POST", "OPTIONS"],
     credentials: true,
   })
 );
+
 app.use(express.json());
 
 // Apply rate limiting to all requests
