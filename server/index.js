@@ -12,6 +12,9 @@ dotenv.config();
 
 const app = express();
 
+// Trust the first proxy in front of your app
+app.set("trust proxy", 1);
+
 // Connect to MongoDB
 connectDB();
 
